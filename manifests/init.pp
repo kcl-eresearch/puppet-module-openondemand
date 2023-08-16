@@ -227,6 +227,8 @@
 #   Path to public files in apps config Git repo
 # @param manage_logrotate
 #   Boolean that allows disabling management of logrotate
+# @param apache_user
+#   User that apache runs as
 #
 class openondemand (
   # repos
