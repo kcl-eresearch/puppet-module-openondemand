@@ -254,6 +254,7 @@ class openondemand (
   # Apache
   Boolean $declare_apache = true,
   String $apache_scls = 'httpd24',
+  String $apache_user = 'apache',
 
   # ood_portal.yml
   Boolean $generator_insecure = false,
