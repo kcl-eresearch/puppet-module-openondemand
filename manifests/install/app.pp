@@ -16,6 +16,8 @@
 #   If defined, no package will be installed
 # @param git_revision
 #   The git revision to checkout
+# @param git_identity
+#   The ssh identity file to use for private git repos
 # @param source
 #   The Puppet source path for app
 # @param path
@@ -33,6 +35,7 @@ define openondemand::install::app (
   Boolean $manage_package = true,
   Optional[String] $git_repo = undef,
   Optional[String] $git_revision = undef,
+  Optional[String] $git_identity = undef,
   Optional[String] $source = undef,
   Optional[Stdlib::Absolutepath] $path = undef,
   String $owner = 'root',
@@ -61,6 +64,7 @@ define openondemand::install::app (
       ensure   => $ensure,
       source   => $git_repo,
       revision => $git_revision,
+      identity => $git_identity,
       provider => 'git',
       require  => Package['ondemand'],
     }
